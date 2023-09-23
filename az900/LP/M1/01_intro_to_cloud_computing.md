@@ -41,8 +41,7 @@
         - PaaS (Infra as a Service):
             - Resp.s similarly distributed
         - SaaS (Infra as a Service):
-            - Provider Resp.s:
-                - Most Resp.s on Provider
+            - Most Resp.s on Provider
 
 ![Bla](pics/shared_resp_models.png)
 
@@ -60,5 +59,37 @@
         - Anyone can purchase cloud services (access/use resources)
         - Key difference: General Public Availability
     - Hybrid Cloud:
-        - 
+        - Combine Publice/Private in inter-connected env
+        - E.g. Use Cases:
+            - Deploying Extra public cloud resources to Surge private cloud to handle increased & temp. demand 
+            - Add extra security layer
 
+    - Comparative table:
+
+![Comparative Table](pics/cloud_model_comp.png)
+
+    - Multi Cloud:
+        - Use multiple public cloud providers
+            - Mix & Match features/offerings
+            - Start with 1 --> Decide to migrate to another
+        - Manage Resources & Security in 2+ envs
+    
+    - Azure Arc:
+        - Cloud Env Mgmt Tech Set
+        - Options: Azure-only; Private; Hybrid; Multi-cloud  
+    - Azure VMware Solution:
+        - Run pre-established VMware workloads in Azure seamlessly
+        - VMware: Cloud com & Virtualization company for private/hybrid clound envs
+
+## Consumption-based Model
+    - IT Infra Expense Type:
+        - CapEx (Buying & Owning hardware Assets/Resources --> Balance Sheet Items)
+            - On-Prem
+        - OpEx (Renting --> P&L Items)
+            - Cloud --> Consumption-based model
+    - Benefits:
+        - No Upfront costs
+        - No CapEx
+        - Up/Down scaling as needed
+        - Plan/Manage OpEx
+        - Run Infrastructure More Efficiently
