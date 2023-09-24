@@ -49,7 +49,21 @@
 				- Pricing Calculator
 
 ## Security & Governance
-	- bla
+	- Help to meet corporate/government standards:
+		- e.g. Set Templates
+		- update resources to new standards when needed
+	- Cloud-based auditing:
+		- flag non-compliant resources
+		- suggest mitigation strategies
+	- OpModel dependent: Automatic software pathcing/updates
+	
+	- Security:
+		- Maximum Security Control: IaaS
+			- Physical Resources provided only
+			- I manage OSs, software, patches/maintenance
+				- Auto-patching: PaaS/SaaS
+		- Cloud providers well suited to handle DDoS attacks
+			- DDoS: Distributed Denail of Service 
 
 ## Manageability
 	- bla
