@@ -1,4 +1,4 @@
-# 1.2) Describe Cloud Service Benefits
+# 1.2) Cloud Service Benefits
 
 ## Objectives:
 	- Define Cloud Benefits of: 
