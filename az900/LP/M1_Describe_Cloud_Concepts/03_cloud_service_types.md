@@ -30,8 +30,31 @@
 		- Given Configs needing quick replication/setup while maintaining total control
 
 ## Platform as a Service
-- bla
+- In-Between IaaS & SaaS
+- Provider Resp.s:
+	- Like IaaS: Phys. Infra, Sec., Connection
+	- Extra: Maintain OS, Middleware, Dev Tools, BI Services
+		- No licensing/patching/OS/DB worries
+- Suitable for: 
+	- Provide complete Dev Env
+	- Without Dev Infra Maintenance headache
+
+- PaaS Use Cases:
+	- Dev Framework:
+		- Framework Devs can extend to further develop/customize cloud-based apps - ~Excel Macro's
+		- Reduce Amount of coding needed
+	- BI/Analytics:
+		- enable data mining
 
 ## Software as a Service
-- bla
+- Rent Complete & Deployed Solution/Developed Application
+- Least Flexible; Fastest to Setup; Least Technical
 
+- Consumer Resp.s:
+	- Data Ingested; Connected Devices; User Access
+
+- E.g. Use Cases (Apps): 
+	- Email
+	- Financial Software
+	- Messaging/Productivity Apps
+	- Connectivity Software
