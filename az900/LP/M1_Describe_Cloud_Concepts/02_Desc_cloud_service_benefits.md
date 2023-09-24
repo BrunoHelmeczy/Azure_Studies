@@ -66,7 +66,18 @@
 			- DDoS: Distributed Denail of Service 
 
 ## Manageability
-	- bla
+	- Things to manage:
+		- Autoscaling
+		- Template-based resource deployment --> no manual configs
+		- Monitor resource health
+		- replace failing resources
+		- Metrics based auto-alerting
+	
+	- Mgmt tools for the above:
+		- Web Portal
+		- CLI
+		- API calls
+		- PowerShell
 
 
 
