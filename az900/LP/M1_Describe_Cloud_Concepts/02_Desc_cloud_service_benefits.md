@@ -22,10 +22,31 @@
 			- Add/Take away extra VMs/Containers
 
 ## Reliability & Predictability
-	- Reliability
-	- Predictability
-		- Performance
-		- Cost
+	- Reliability:
+		- Def: Systems' Ability to recover & continue functioning
+		- Azure well-architected framework pillar
+		- Cloud:
+			- Natural support for reliable/resilient infrastructure
+			- Decentralized design:
+				- Resource deployment around the globe - disaster recovery
+			- App design can automatically take advantage of reliability
+				- E.g. Automatically migrate to different regions
+	- Predictability (Planning Ahead):
+		- Azure well-architected framework pillar
+		- Performance:
+			- predict resource needs for good UX
+			- Supporting cloud concepts:
+				- Autoscaling - add resources when needed
+				- Load Balancing - redirect/distribute overload to less stressed regions/areas
+				- High Availability
+
+		- Cost:
+			- Predict & Monitor Cloud Spending
+				- ensure efficient usage
+				- data analytics for usage patterns/trends
+			- E.g. Tools:
+				- Total Cost of Ownership (TCO)
+				- Pricing Calculator
 
 ## Security & Governance
 	- bla
