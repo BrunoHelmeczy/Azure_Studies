@@ -50,4 +50,24 @@
 - Common start:
     - Move existing app to VM - run in Azure
         - Good start - Cloud offers much more
-- 
+
+## Get started with Azure Accounts
+
+- ![Alt text](pics/account_resource_hierarchy.png)
+
+- [Azure Portal Home Page](https://portal.azure.com/#home)
+
+### Microsoft Learn Sandbox
+- Temp Sandbox Env. to complete LP exercises
+- Creates Temp Subscriptions
+    - added to your Azure accounts
+    - allows resource creation during Learn Modules
+    - automatically cleans up temp resources after acompleting the module
+
+- FYI:
+    - can use Personal Subscription for exercies
+    - Sandbox is preferred:
+        - Create/Test azure resources for free!!!
+    
+## Explore Learn Sandbox
+
