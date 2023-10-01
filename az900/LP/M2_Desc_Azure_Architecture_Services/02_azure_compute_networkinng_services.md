@@ -1,4 +1,4 @@
-# 2.1) Azure Compute & Networking Services
+# 2.2) Azure Compute & Networking Services
 
 ## Objectives:
 	- Compare:
@@ -10,3 +10,4 @@
 		- Virtual Networking - Inc. use case for Azure Virtual Networks, Azure virtual subnets, peering, Azure DNS, VPN Gateway, Express Route
 	- Define:
 		- Public/Private Endpoints
+
