@@ -97,3 +97,78 @@
             - Keeps exercises free for user
 
 ## Azure Physical Infrastructure
+- Important Terms: Regions; Availability Zones; Resources; Subscriptions, etc.
+- 2 Core architectural Component Groups:
+    - Physical Infrastructure
+    - Mgmt Infrastructure
+
+### Physical Infrastructure
+- Start: DataCenter
+    - Same as Large Corporate Datacenter
+    - Facilities with Racks of Resources; Dedicated Power, Cooling; Networking Infra
+
+- Azure: Datacenters around the globe
+    - Inaccessible Directly
+    - Grouped into: 
+        - Azure Regions 
+        - Availability Zones
+    - Designed for Resilience/Reliability
+
+### Regions
+- Def: Geopraphical Area containing at least 1 datacenter that is nearby and networked together with low-latency network
+    - TLDR:
+        - Geographical Area
+        - Contains 1/more datacenter
+        - Is close by
+        - Is connected with low-latency network
+    - Azure:
+        - Intelligent Resource Control/Assignment within Region
+            - Ensure well-balanced workloads
+
+- Upon Resource Deployment: Choosing regoin to be deployed on 
+- +1s: 
+    - Some Services/VM features - Region-specific Availability
+    - Services without Region Selection:
+        - Azure Active Directory
+        - Azure Traffic Manager
+        - Azure DNS
+
+### Availability Zones
+- Def: Physically separate datacenters within Azure Regions
+    - Made up of 1+ datacenters with:
+        - Independent Power; Cooling; Networking
+- Set up to an Isolation Boundary
+    - i.e. If/When 1 Zone goes down; other continues working
+- Availability Zones:
+    - Connected through high-speed, private fiber-optic networks:
+    - Resilience Insurance:
+        - 3+ Availability Zones per Region
+            - Availability Zone Enabled Regions
+    - Not all Azure Regions support Availability Zones
+
+- ![Alt text](pics/regions_avail_zones.png)
+
+- Usage in your Apps
+    - Ensure Service/Data Redundancy:
+        - Fail-Proof/Protect information
+    - Own Infrastructure hosting setup:
+        -  Create duplicate hardware environments --> Availability Zones
+    - Co-Locate Compute; Storage; Network; Data Resources in Availability Zone
+        - Then Replicate then in another
+        - Cost associated with resource duplication
+    - Primary Purpose: 
+        - VMs; Managed Disks; Load Balancers; SQL DBs
+        - 3 Categories:
+            - Zonal Services:
+                - Pin Resource to Specific Zone
+            - Zone-Redundant Services:
+                - Platform Replicated Automatically Across Zone
+                    - e.g. Zone-Redundant Storage; SQL DBs
+            - Non-Regional Services:
+                - Always available from Azure Geopraphies
+                - Resilient to Zone/Region-Wide Outages
+
+    - Additional Resiliency --> Region Pairs
+
+### Region Pairs
+- 
