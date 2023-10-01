@@ -71,3 +71,29 @@
     
 ## Explore Learn Sandbox
 
+- 1) Use ***Powershell CLI***
+    - Current Date: `Get-date`
+    - Azure specific Commands:
+        - Uses ***Azure CLI***: `az ...`
+            - version test: `az version`
+
+- 2) Use ***Bash CLI***
+    - Switch to bash from Powershell CLI: `bash`
+    - Current Date: `date`
+    - Run Azure CLI commands: `az ...`
+        - e.g. Upgrade Azure CLI: `az upgrade`
+    - return to Powershell Mode: `pwsh`
+
+- 3) Use Azure CLI Interactive Mode
+    - Enter Interactive Mode: `az interactive`
+        - this is Azure specific - no need for `az ` preposition
+            - Version check: `version`
+            - Upgrade: `upgrade`
+            - Exit: `exit`
+
+- 4) Use the Azure Portal
+    - Option will show/pop-up for sandbox exercises
+        - Use provided link
+            - Keeps exercises free for user
+
+## Azure Physical Infrastructure
