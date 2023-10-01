@@ -171,4 +171,5 @@
     - Additional Resiliency --> Region Pairs
 
 ### Region Pairs
-- 
+- TBC from [here](https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure)
+    - Regions Pairs section
