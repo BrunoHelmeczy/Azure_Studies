@@ -290,3 +290,31 @@
     - Only 1 Parent - Mgmt Grps/ Subs
 
 ## 2.1.7) Create Azure Resource
+
+- 1) Create VM
+    - Azure portal sign-in
+    - Create Resource > Compute > VM > Create
+    - Settings:
+        - Basics:
+            - Subs:                     Concierge Subscription
+            - Res. Grp:                 learn-*
+            - VM name:                  my-VM
+            - Region:                   US West US (default)
+            - availability:             No infra redundancy req (default)
+            - Secu Type:                Trusted launch VMs (default)
+            - Image:                    Ubuntu Server 20.04 LTS - x64 Gen2 (default)
+            - VM Architect.:            x64 (default)
+            - Run W Spot Disc.          Unchecked
+            - Size:                     Standard D2s_v3 - 2 vcpus, 8 Gb Mem ($85/mnth) (default)
+            - Auth Type:                password 
+            - username:                 azureuser
+            - password:                 custom pwd
+            - confirm pswd:             custom pwd
+            - Public inbound ports:     None
+    - Review & Create
+    - Select Create
+- 2) Verify Resource Creation
+    - Select Home > Resource Grps
+        - Res. Grp: learn-35ec474b-581e-4553-8aae-01c7ef53495b
+        - 
+- 3) Clean Up 
