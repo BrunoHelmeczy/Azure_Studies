@@ -1,5 +1,6 @@
 # 2.1) Azure Core Architectural Components
 
+## 2.1.1) Intro
 ## Objectives:
 	- Describe: 
         - Azure: 
@@ -13,7 +14,7 @@
 
  
 
-## Microsoft Azure
+## 2.1.2) Microsoft Azure
 - Expending Cloud Services - help to meet business needs
 - Offers:
     - Freedom to:
@@ -51,7 +52,7 @@
     - Move existing app to VM - run in Azure
         - Good start - Cloud offers much more
 
-## Get started with Azure Accounts
+## 2.1.3) Get started with Azure Accounts
 
 - ![Alt text](pics/account_resource_hierarchy.png)
 
@@ -69,7 +70,7 @@
     - Sandbox is preferred:
         - Create/Test azure resources for free!!!
     
-## Explore Learn Sandbox
+## 2.1.4) Explore Learn Sandbox
 
 - 1) Use ***Powershell CLI***
     - Current Date: `Get-date`
@@ -96,7 +97,7 @@
         - Use provided link
             - Keeps exercises free for user
 
-## Azure Physical Infrastructure
+## 2.1.5) Azure Physical Infrastructure
 - Important Terms: Regions; Availability Zones; Resources; Subscriptions, etc.
 - 2 Core architectural Component Groups:
     - Physical Infrastructure
@@ -211,3 +212,81 @@
     - 21Vianet - Microsoft partnership - Vianet maintains datacenters:
         - China East
         - China North
+
+## 2.1.6) Azure Mgmt Infrastructure
+
+- Includes Azure:
+    - Hierarchical Org.: Resources; Resource Grps; Subscriptions; Accounts
+
+### Resources & Resource Grps
+
+- Basic Azure Building Block: ***Resource***
+    - E.g: VMs; V(P)Ns; DBs; Cognitive Services 
+    - Resource Creation --> Must place inside ***Resource Group***
+    - Only in 1 Resource Grp at a time
+        - Some - can move betw. Resource Grps
+            - Assoc. w 1 Resource Grp at a time
+
+- Resource Groups --> Grouping of Resources
+    - Cannot be nested
+    - Applying Actions - e.g. Security Config 
+        - at Resource Grp. level
+        - all resourcees within Resource Grp affected
+            - e.g. Resource Grp deletion:
+                - All resources within are deleted
+    
+    - Resource Provisioning task: design suitable Resource Grp structure
+        - e.g: 
+            - Temp. dev env> 1 Resource Grp -->  delete Resource Grp when done
+            - 3 access schemas: 3 Resource Grp by access schema --> access config by Resource Grp
+
+### Subscriptions
+
+- Unit of Mgmt, Billing, Scale
+- Logically organize Resource Grps
+    - Sub. > Resource Grp > Resource
+- Facilitate Billing
+- Linked to Azure Account - i.e. Azure AD Identity
+    - 1 Account --> Single/Multiple subscriptions
+        - Multi-Sub: 
+            - Config different Billing Models; AM Policies
+            - Define Boundaries Betw Prods/Services/Resources
+                - Boundary Types:
+                    - Billing boundary: separate billing reports
+                    - Access Ctrl Boundary: e.g. subs per department
+
+- Gives Authenticated & Authorized access for Prods/Services
+    - Allows resource provisioning
+
+- Adding subscriptions - to Separate:
+    - Env.s: Dev; Test; Secu; Data Isolation - Resource Access Ctrl @ Subs. Level
+    - Org. Structures: Limit Mkt.ing to Low-cost resources; IT to full-range
+    - Billing: Billing is 1st aggregated to Subs. level --> costs overview of Env.s & Org.s
+
+### Mgmt Groups
+
+- Resource > Res. Grp. > Subs.
+
+- Many Apps; Dev. Teams; Geographies --> Many Subs
+- Mgmt Grps --> Efficient Subs. Mgmt
+    - Organize Subs into Containers i.e. Mgmt Grps
+    - Cond. Inheritance fr Mgmt Grps --> applied to all Subs in Mgmt Grp
+    - Can Nest upto 6 intermediate levels
+
+![Full resource hierarchy example](pics/full_res_hier_eg.png)
+
+- E.g. structures:
+    - Policy Applying Hierarchy:
+        - Production Grp: Limit VM locations to US West Region
+            - Policy Inheritance to all descendants - Mgmt Grps; Subs
+            - Cannot be changed by descendants
+    - User Access provision to many Subs:
+        - 1 Rule-based Access Ctrl (RBAC) assignment to Mgmt Grp
+            - Polciy Inheritance: All Sub-Mgmt Grps; Subs; Res. Grps; Resources
+
+- +1s:
+    - 1 directory - 10k Mgmt Grps
+    - Mgmt Grp tree - 6 intermediate levels depth (exc. Root & Subs Levels; )
+    - Only 1 Parent - Mgmt Grps/ Subs
+
+## 2.1.7) Create Azure Resource
