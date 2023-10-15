@@ -171,5 +171,43 @@
     - Additional Resiliency --> Region Pairs
 
 ### Region Pairs
-- TBC from [here](https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure)
-    - Regions Pairs section
+
+- Affected Region --> services fall over to respective Region Pair
+- Regions paired: 
+    - in same Geography (US, EU, Asia)
+    - Min. 500 km distance
+    - Reduce interruption likelihood affecting entire regions caused by:
+        - Natural Disasters
+        - Civil Unrest
+        - Power/Physical Network Outage
+- Not automatic for every service
+
+- E.g.s:
+    - West US - East US
+    - Sotuh-East Asia - East Asia
+    
+![Region Pairs in Geographies](pics/geo_region_pairs.png)
+
+- Other Benefits:
+    - Large Outages: 
+        - 1 region in Region Pair is prioratized to recover ASAP
+    - Planned Updates:
+        - rolled out 1 region at a time within Region Pairs
+    - Data located in same Region
+
+- +1s:
+    - ***Most*** Region Pairs are eachothers' backups
+        - exc. e.g. West India - Brazil South --> 1 directional pairing
+            - Primary Region is not backup for Secondary Region
+
+### Sovereign Regions
+
+- Azure Instances ***Fully Isolated*** from main Azure Instance
+- Possibly needed for Compliance/Legal reasons
+- e.g.s: 
+    - Physical/Logical Network isolated Azure instances:
+        - US Department of Defense Central
+        - US Government Virginia; Iowa
+    - 21Vianet - Microsoft partnership - Vianet maintains datacenters:
+        - China East
+        - China North
