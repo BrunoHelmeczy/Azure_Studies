@@ -95,10 +95,68 @@
 	- Networking - Virt. Netw.; Public IP; Port Config
 
 ## 2.2.3) Exercise: Create a VM
+- Create Linux VM & Install nginx
+	- 1) in Cloud Shell, run:
 
+	```
+	az vm create \
+		--resource-group learn-abcbde15-1967-42e2-bc65-2014db8841d1 \
+		--name my-vm \
+		--public-ip-sku Standard \
+		--image Ubuntu2204 \
+		--admin-username azureuser \
+		--generate-ssh-keys
+	```
+	- Line-by-Line:
+		- l1: create VM
+		- l2: inside Resource Group: `learn-abcbde15-1967-42e2-bc65-2014db8841d1`
+		- l3: with Name: `my-vm`
+		- l4: with Public IP SKU: `Standard`
+		- l5: Based on Image: `Ubuntu2204`
+		- l6: My Username: `azureuser`
+		- l7: With access setup via `generate-ssh-keys`
 
+	- Install NginX:
+
+	```
+	az vm extension set \
+		--resource-group learn-abcbde15-1967-42e2-bc65-2014db8841d1 \
+		--vm-name my-vm \
+		--name customScript \
+		--publisher Microsoft.Azure.Extensions \
+		--version 2.1 \
+		--settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
+		--protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
+	```
+
+	- Line-by-Line:
+		- l1: run `az vm extension set`
+		- l2: inside resource group `learn-abcbde15-1967-42e2-bc65-2014db8841d1`
+		- l3: on VM named: `my-vm`
+		- l4: a script named `customScript`
+		- l5: published by Microsoft Azure
+		- l6: version 2.1
+		- l7: use the URL above (see script [here](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh))
+		- l8: execute the command `./configure-nginx.sh`
+
+	- Raw `./configure-nginx.sh` script:
+
+	```
+	#!/bin/bash
+
+	sudo apt-get update 				# Update apt cache.
+
+	sudo apt-get install -y nginx		# Install Nginx.
+
+	# Set the home page.
+	echo "<html><body><h2>Welcome to Azure! My name is $(hostname).</h2></body></html>" | sudo tee -a /var/www/html/index.html
+	```
+
+- TBD: update network config for acces in `2.2.9`
 
 ## 2.2.4) Azure Virtual Desktop
+
+
 ## 2.2.5) Containers
 ## 2.2.6) Azure Functions
 ## 2.2.7) App Hosting Options
