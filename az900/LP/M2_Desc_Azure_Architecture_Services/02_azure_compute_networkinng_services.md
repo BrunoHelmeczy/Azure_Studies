@@ -155,6 +155,31 @@
 - TBD: update network config for acces in `2.2.9`
 
 ## 2.2.4) Azure Virtual Desktop
+- VM type
+- Desktop/App virtualization service on Cloud:
+	- use cloud-hosted Windows from anywhere - ~VDI
+- works with:
+	- all devices/OS
+	- apps for remote desktops; modern browsers
+
+- Seperate Data/Apps & Hardware
+	- Apps running in cloud - reduce data-leakage risk
+- Isolated User Sessions 
+
+
+
+### Security Enhancement
+- Microsoft Entra ID - Centralized Secu Mgmt 4 Users' Desktops
+- MFA 4 Secure sign-ins
+- Data Security: RBACs
+
+### Multi-Sess Windows 10/11 Deployment
+- Azure VD - Windows 10/11 Enterprise multi-session
+	- Only Client-based OS to enable multi-session in 1 VM
+	- +1s:
+		- vs Windows Server-based OSs:
+			- More Consistent UX
+			- Broader App Support
 
 
 ## 2.2.5) Containers
