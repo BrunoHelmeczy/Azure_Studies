@@ -181,8 +181,54 @@
 			- More Consistent UX
 			- Broader App Support
 
-
 ## 2.2.5) Containers
+- VMs: 1 OS / VM --> Containers: Many APP instances on 1 VM/host machine
+
+### Container Def (vs VMs):
+- Virtualization Environment
+- 1 Physical/Virtual Host/Machine --> Many Containers
+- No OS Mgmt in Containers
+- VM: Connectable/Manageable OS instance
+- Container: Lightweight; Desinged for dynamic creation/scaling/stopping
+- VM Scale up: Possible --> Containers: More Agile
+	- Designed for dynamic demand
+	- Quick restart (crash recovery; hardware problem)
+
+- Azure: Docker Supoprt
+
+### Containers vs VMs
+- Azure Container Instances 
+	- fastest/simplest container running in Azure
+	- No VM Mgmt; Other Services Adoption
+	- PaaS offering 
+	- Upload containers; service runs containers for you
+
+- Azure Container Apps
+	- Similar to container instances 
+		- Quick startup; No Container Mgmt; PaaS offering 
+		- +1s: Load Balancing/Scaling 
+
+- Azure Kubernetes Service
+	- Container Orchestration Service:
+		- Container Lifecycle Mgmt
+
+	- Container Fleet Deployment: AKS 
+		- Simple; Efficient fleet Mgmt
+
+### Container Use-Cases
+- microservice architecture-based Solutions
+	- Break solutions into small independent pieces
+	- E.g.: 1-1 Container for Website Front End; Back End; Storage
+		- App Modularization: 
+			- logical sections 
+			- Independent maintainence/scaling/updates
+-
+
+Imagine your website back-end has reached capacity but the front end and storage aren't being stressed
+- With containers, you could scale the back end separately to improve performance
+- If something necessitated such a change, you could also choose to change the storage service or modify the front end without impacting any of the other components
+-
+
 ## 2.2.6) Azure Functions
 ## 2.2.7) App Hosting Options
 ## 2.2.8) Azure Virtual Networking
