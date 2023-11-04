@@ -1,5 +1,7 @@
 [Question Bank](https://www.itexams.com/exam/AZ-900?)
 
+* Note: These appear when you didn't login
+
 
 ### 1) Match the cloud model to the correct advantage - Private, Public, Hybrid
 Instructions: To answer, drag the appropriate cloud model from the column on the left to its advantage on the right. Each cloud model may be used once, more than once, or not at all.
@@ -197,5 +199,51 @@ MS SQL Server DB hosted in the cloud and has software updates managed by azure i
 
 Ans: c. PaaS Ref: [SQL IaaS vs PaaS](https://docs.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview)
 
-### 13)
+### 13) Scenario-based - PaaS, IaaS, SaaS offerings
+
+Your company plans to migrate all its data and resources to Azure.
+The company's migration plan states that only Platform as a Service (PaaS) solutions must be used in Azure.
+You need to deploy an Azure environment that meets the company's migration plan.
+
+What should you create?
+
+- a. VMs, SQL databases, & Storage accounts.
+- b. an App Service & VMs that have MS SQL Server installed.
+- c. an App Service & SQL databases.
+- d. storage accounts & web server in VMs
+
+Ans: c.
+
+Exp: 
+- App Service & SQL DBs: PaaS solution example.
+- VMs - IaaS
+- Storage Accounts - PaaS 
+
+### 14) SaaS
+
+What does a customer provide in a SaaS model?
+- a. application data
+- b. data storage
+- c. compute resources
+- d. application software
+
+Ans: a. App Data
+
+Exp: 
+- SaaS: complete software solution purchased on pay-as-you-go basis from cloud provider. 
+    - rent app usage for org + users connect via Internet 
+    - Underlying infra, middleware, app software & data located at service provider data center
+    - Provider manages hardware; software:
+        - +1: with appropriate SLA, ensure app & data availability; security
+
+### 15) Yes if True, Otherwise No - PaaS, IaaS, SaaS offerings
+
+- a. Azure Files - IaaS
+- b. DNS Server running on VM - PaaS
+- c. Microsoft Intune - SaaS
+
+Ans: a. Yes, b. Yes, c. Yes
+
+Exp: [IaaS](https://azure.microsoft.com/en-us/overview/what-is-iaas/), [SaaS](https://azure.microsoft.com/en-us/overview/what-is-saas/), [PaaS](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+
 
