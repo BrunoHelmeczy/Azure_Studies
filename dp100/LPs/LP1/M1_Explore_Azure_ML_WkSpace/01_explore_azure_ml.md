@@ -112,70 +112,33 @@ ml_client.workspaces.begin_create(ws_basic)
         - Connection Info to a Data Service
             - stored in Azure Key Vault
 - WS created --> Stored account created + connected to WS
-    - 4 datastores added to WS:
+    - 4 datastores added to WS (default):
         - *workspaceartifactstore*: 
             - connects to *azureml* container in AZ Storage account
             - stores compute/experiment log for running jobs
         - *workspaceworkingdirectory*: 
             - connects to AZ Storage accounts' file share
-            - 
+            - uploaded folders/files stored in here - for access via compute instance
         - *workspaceblobstore*: 
+            - connects to blob storage: `azureml-blobstore-...` container
+            - default datastore - new data asset created / data uploaded --> stored here
         - *workspacefilestore*: 
-
+            - connects to Storage accounts' fileshare: `azureml-filestore-...` file share
+    - +1: 
+        - can create datastores to connect to other AZ data services
+            - Most common (in DS projects):
+                - Azure Storage Account
+                - Azure Data Lake Storage (Gen2)
 
 
 ## ID Azure ML Assets
-    - Private; Public; Hybrid
-
-    - Private Cloud:
-        - Evolution from On-Prem/Corp. Datacenter
-        - Cloud used by 1 entity
-        - Greatest Company/IT Departmental Control
-        - Most Costly
-        - Can be hosted: on-prem/dedicated datacenter (also 3rd part potentially)
-    - Public Cloud:
-        - Built; Controlled; Maintained by 3rd Party (Azure, GCP, AWS)
-        - Anyone can purchase cloud services (access/use resources)
-        - Key difference: General Public Availability
-    - Hybrid Cloud:
-        - Combine Publice/Private in inter-connected env
-        - E.g. Use Cases:
-            - Deploying Extra public cloud resources to Surge private cloud to handle increased & temp. demand 
-            - Add extra security layer
-
-    - Comparative table:
-
-![Comparative Table](pics/cloud_model_comp.png)
-
-    - Multi Cloud:
-        - Use multiple public cloud providers
-            - Mix & Match features/offerings
-            - Start with 1 --> Decide to migrate to another
-        - Manage Resources & Security in 2+ envs
-    
-    - Azure Arc:
-        - Cloud Env Mgmt Tech Set
-        - Options: Azure-only; Private; Hybrid; Multi-cloud  
-    - Azure VMware Solution:
-        - Run pre-established VMware workloads in Azure seamlessly
-        - VMware: Cloud com & Virtualization company for private/hybrid clound envs
+- bla
 
 ## Train Models 
-    - IT Infra Expense Type:
-        - CapEx (Buying & Owning hardware Assets/Resources --> Balance Sheet Items)
-            - On-Prem
-        - OpEx (Renting --> P&L Items)
-            - Cloud --> Consumption-based model
-    - Benefits:
-        - No Upfront costs
-        - No CapEx
-        - Up/Down scaling as needed
-        - Plan/Manage OpEx
-        - Run Infrastructure More Efficiently
+- bla
 
 ## Exercise - Explore Workspace
 - bla
 
-
 ## Knowledge Check
-
+- bla
