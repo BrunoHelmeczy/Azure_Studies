@@ -1,5 +1,11 @@
 from fpdf import FPDF
 import pandas as pd
+import os
+import sys
+
+sys.path.append(os.path.join(os.getcwd(), "dp100", "src"))
+
+from file_read import FileReader
 
 
 class PDFGenerator:
@@ -8,6 +14,7 @@ class PDFGenerator:
     LINESPACE = 3
     HEIGHT = 74
     WIDTH = 105
+    trash_cards = []
 
     def __init__(self):
         self.pdf = self._get_pdf()
@@ -24,39 +31,55 @@ class PDFGenerator:
 
         return pdf
 
-    def write_flashcards(self, questions, answers):
+    def write_flashcards(self, questions_answers):
         pdf = self.pdf
         alignment = self.ALIGNMENT
         size = self.SIZE
         linespace = self.LINESPACE
+        page_counter = 0
 
-        for question, answer in zip(questions, answers):
+        for text in questions_answers:
             page_text_size = size
-            # question side
-            # question = questions[-1]
             pdf.set_font("Arial", size=page_text_size)
             while True:
                 pdf.add_page()
-                pdf.multi_cell(0, linespace, question, align=alignment)
+                pdf.multi_cell(
+                    0,
+                    linespace,
+                    text.encode("utf-8").decode("unicode_escape"),
+                    align=alignment,
+                )
                 if pdf.get_y() < self.HEIGHT:
                     break
                 page_text_size -= 1
+                self.trash_cards.append(page_counter)
+                page_counter += 1
                 pdf.set_font("Arial", size=page_text_size)
-                print(page_text_size)
-            # pdf.get_x()
-            page_text_size = self.SIZE
-            print(page_text_size)
 
-            # answer side
-            pdf.add_page()
-            # page_text_size = 8
             page_text_size = self.SIZE
-            pdf.set_font("Arial", size=page_text_size)
-            # while pdf.get_string_width(answer) > (pdf.w - 5) or page_text_size >= 6:
-            #     page_text_size -= 1
-            #     pdf.set_font("Arial", size=page_text_size)
-            pdf.multi_cell(0, linespace, answer, align=alignment)
+            page_counter += 1
+
+    def save_dummy_pdf(self, filename="dummy_flashcards_a7.pdf"):
+        self.pdf.output(filename)
+        print(f"Dummy PDF saved as {filename}")
 
     def save_pdf_file(self, filename="flashcards_a7.pdf"):
-        self.pdf.output(filename)
-        print(f"Flashcards saved to {filename}")
+        dummy_filename = "dummy_flashcards_a7.pdf"
+        self.save_dummy_pdf(dummy_filename)
+
+        from PyPDF2 import PdfWriter, PdfReader
+
+        infile = PdfReader("flashcards_a7.pdf", "rb")
+        output = PdfWriter()
+
+        for i in range(len(infile.pages)):
+            if i not in self.trash_cards:
+                p = infile.pages[i]
+                output.add_page(p)
+
+        with open(filename, "wb") as f:
+            output.write(f)
+        print(f"PDF saved as {filename}")
+
+        os.remove(dummy_filename)
+        print(f"Dummy PDF removed")
