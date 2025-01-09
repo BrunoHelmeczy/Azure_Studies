@@ -15,6 +15,9 @@ class FileReader:
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read().replace("\n", " ")
 
+        return content
+
+    def _split_sections(self, content: str) -> pd.DataFrame:
         import re
 
         regex = re.compile(r"(?:PRACTICE TEST \d+ . (?:QUESTIONS|ANSWERS) ONLY)")
@@ -47,6 +50,10 @@ class FileReader:
 
         df = df.explode(["question_nrs", "q_contents"])
         df["question_nrs"] = df["question_nrs"].astype(int)
+        # add new line character before answer choices
+        df["q_contents"] = (
+            df["q_contents"].str.strip().str.replace(r"(?=[A-F]\))", "\n", regex=True)
+        )
 
         df.sort_values(
             ["practice_test_id", "question_nrs", "section"],
@@ -59,12 +66,10 @@ class FileReader:
     def get_data(self) -> pd.DataFrame:
 
         df = (
-            self._read_raw_file(self.filepath)
+            self._split_sections(self._read_raw_file(self.filepath))
             .pipe(self._clean_metadata)
             .pipe(self._split_questions_answers)
+            .reset_index(drop=True)
         )
 
         return df
-
-
-# ck = FileReader()()
