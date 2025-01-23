@@ -27,13 +27,17 @@ As exam candidate, you should have know-how in DS using:
 - Optimize language models for AI applications (25–30%)
 
 ### Design & prepare a ML solution (20–25%)
+- Design an ML solution
+- Create & manage resources in an Azure ML workspace
+- Create & manage assets in an Azure ML workspace
+
 #### Design a ML solution
 - Identify the structure & format for datasets
 - Determine the compute specifications for ML workload
 - Select the development approach to train a model
 
 #### Create & manage resources in an Azure ML workspace
-- Create & manage a workspace
+- Create & manage workspaces
 - Create & manage datastores
 - Create & manage compute targets
 - Set up Git integration for source control
@@ -44,10 +48,14 @@ As exam candidate, you should have know-how in DS using:
 - Share assets across workspaces by using registries
 
 ### Explore data, & run experiments (20–25%)
+- Use AutoML to explore optimal models
+- Use notebooks for custom model training
+- Automate hyperparameter tuning
+
 #### Use automated ML to explore optimal models
-- Use automated ML for tabular data
-- Use automated ML for computer vision
-- Use automated ML for natural language processing
+- Use AutoML for tabular data
+- Use AutoML for computer vision
+- Use AutoML for natural language processing
 - Select & understand training options, including preprocessing & algorithms
 - Evaluate an automated ML run, including responsible AI guidelines
 
